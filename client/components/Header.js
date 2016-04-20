@@ -38,6 +38,9 @@ class Header extends Component {
           <div className='col-10-12'>
             <h1>SCENIC<span className='black'>.SAMURAI</span></h1>
             <p className='description'>After years spent scouring Google Places, Scenic Ninja is ready to share his wisdom with you.</p>
+            <form className='location-query'>
+              <input type="text" placeholder="Where do you want to find a view?"></input>
+            </form>
             <button
             onClick={ this.handleClick.bind(this) }
             type="submit">Find Views

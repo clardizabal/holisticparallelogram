@@ -107,16 +107,17 @@ module.exports.searchGoogle = function(req, res) {
 
   request.get('https://maps.googleapis.com/maps/api/place/radarsearch/json' + searchString + '&key=' + GOOGLE_PLACES_API_KEY)
     .on('response', function(response) { //layer 1 on 'response'
-      console.log('https://maps.googleapis.com/maps/api/place/radarsearch/json' + searchString + '&key=' + GOOGLE_PLACES_API_KEY);
-
       var body = [];
 
       response.on('data', function(chunk) { //layer 2 on 'data'
+        console.log('ON DATA');
         body.push(chunk);
       }).on('end', function() { //layer 2 on 'end'
+        console.log('ON END');
         body = JSON.parse(Buffer.concat(body).toString());
         var filteredBody = {};
         filteredBody.places = [];
+        console.log('BODY OF DATA: ', body.results.length);
         if (body.results && body.results.length > 0) {
 
           var places = body.results;
