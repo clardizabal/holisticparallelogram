@@ -13,20 +13,20 @@ class SimpleMap extends Component {
     return (
       <GoogleMapLoader
         containerElement={
-            <div
-              style={{
-                height: "100%",
-              }}
-            />
-          }
+          <div
+            style={{
+              height: "100%",
+            }}
+          />
+        }
         googleMapElement={
-          <GoogleMap 
+          <GoogleMap
             ref={(map) => console.log(map)}
             defaultZoom={3}
             defaultCenter={{lat: -25.363882, lng: 131.044922}}>
           </GoogleMap>
         }
-      />
+      />      
     );
   }
 }
