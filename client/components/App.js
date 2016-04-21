@@ -7,12 +7,17 @@ import PlaceContainer from './PlaceContainer';
 import SavedPlaceContainer from './SavedPlaceContainer';
 import searchGooglePlaces from '../utils/searchGooglePlaces.js';
 import $ from 'jquery';
+// import {GoogleMapLoader, GoogleMap, Marker} from 'react-google-maps';
+import SimpleMap from './SimpleMap';
 
 class App extends Component {
   render() {
     return (
       <div>
         <Header/>
+        <div>
+          <SimpleMap/>
+        </div>
         <div className='grid'>
           <PlaceContainer/>
           <SavedPlaceContainer/>
